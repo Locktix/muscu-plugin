@@ -1,0 +1,22 @@
+{
+  "parent": "muscu:niveau/7",
+  "criteria": {
+    "niveau": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "icon": {
+      "id": "minecraft:feather"
+    },
+    "title": {
+      "text": "Niv 8 : Genoux solides"
+    },
+    "description": {
+      "text": "Atteindre le niveau 8 de muscu\n+1 bloc de chute sans dégâts"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false
+  }
+}

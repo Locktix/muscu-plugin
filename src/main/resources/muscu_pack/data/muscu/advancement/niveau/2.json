@@ -1,0 +1,22 @@
+{
+  "parent": "muscu:niveau/1",
+  "criteria": {
+    "niveau": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "icon": {
+      "id": "minecraft:apple"
+    },
+    "title": {
+      "text": "Niv 2 : Petit coeur"
+    },
+    "description": {
+      "text": "Atteindre le niveau 2 de muscu\n+1 coeur"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false
+  }
+}

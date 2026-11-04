@@ -1,0 +1,22 @@
+{
+  "parent": "muscu:niveau/6",
+  "criteria": {
+    "niveau": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "icon": {
+      "id": "minecraft:diamond_sword"
+    },
+    "title": {
+      "text": "Niv 7 : Frappe lourde"
+    },
+    "description": {
+      "text": "Atteindre le niveau 7 de muscu\n+1 dégât au total"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false
+  }
+}

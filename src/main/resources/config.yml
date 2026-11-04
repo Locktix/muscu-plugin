@@ -1,0 +1,117 @@
+# ─────────────────────────────────────────────
+#  Muscu : réglages
+#  Après une modif : /muscu admin reload
+# ─────────────────────────────────────────────
+
+# Points nécessaires pour passer du niveau N au niveau N+1 = (N + 1) x points-par-niveau
+# (avec 20 : 20 pts pour le niv 1, 40 pour le niv 2, ... 200 pour le niv 10)
+niveaux:
+  points-par-niveau: 20
+
+# "chaque" = combien il en faut pour gagner "points"
+activites:
+  sauts:   { chaque: 10, points: 1 }   # sauts
+  sprint:  { chaque: 50, points: 1 }   # blocs parcourus en sprintant
+  nage:    { chaque: 25, points: 1 }   # blocs parcourus à la nage
+  degats:  { chaque: 10, points: 1 }   # cœurs de dégâts infligés
+  mob-tue: { chaque: 1,  points: 2 }   # mobs tués
+  viande-cuite:
+    points: 1                          # par viande mangée
+    items: [COOKED_BEEF, COOKED_CHICKEN, COOKED_PORKCHOP, COOKED_MUTTON]
+
+minage:
+  # Les minerais posés par un joueur puis recassés ne rapportent rien (anti-farm silk touch)
+  ignorer-minerais-poses: true
+  groupes:
+    commun:
+      nom: Minerais communs
+      icone: COAL
+      chaque: 5
+      points: 1
+      blocs: [COAL_ORE, DEEPSLATE_COAL_ORE, COPPER_ORE, DEEPSLATE_COPPER_ORE, REDSTONE_ORE,
+              DEEPSLATE_REDSTONE_ORE, LAPIS_ORE, DEEPSLATE_LAPIS_ORE, NETHER_GOLD_ORE]
+    moyen:
+      nom: Minerais précieux
+      icone: RAW_IRON
+      chaque: 2
+      points: 1
+      blocs: [IRON_ORE, DEEPSLATE_IRON_ORE, GOLD_ORE, DEEPSLATE_GOLD_ORE, NETHER_QUARTZ_ORE]
+    rare:
+      nom: Minerais rares
+      icone: DIAMOND
+      chaque: 1
+      points: 3
+      blocs: [DIAMOND_ORE, DEEPSLATE_DIAMOND_ORE, EMERALD_ORE, DEEPSLATE_EMERALD_ORE, ANCIENT_DEBRIS]
+
+# Bonus "séance à deux" quand un autre joueur est proche
+duo:
+  actif: true
+  rayon: 20            # en blocs
+  bonus-pourcent: 10   # +10% sur les points gagnés
+
+# Shaker de protéines : fiole + seau de lait + sucre + viande cuite (sans forme)
+shaker:
+  points: 5
+  cooldown-secondes: 300
+
+# ─────────────────────────────────────────────
+#  Défis du jour (remise à zéro à minuit, heure du serveur)
+#  Les mêmes défis pour tout le monde, chacun avance de son côté.
+#  Types : sauts, sprint (blocs), nage (blocs), degats (cœurs), tuer, minerais,
+#          viande, shaker, peche, recolte (cultures mûres), buches, points
+#  "cible" (optionnel) : un mob pour "tuer" (zombie, skeleton, creeper...),
+#                        un groupe de minage.groupes pour "minerais" (commun, moyen, rare)
+# ─────────────────────────────────────────────
+defis:
+  actif: true
+  par-jour: 3                # nombre de défis perso tirés chaque jour (1 à 7)
+  bonus-tous-reussis: 10     # points en plus si on les réussit tous
+  perso:
+    - { type: sauts,    quantite: 150, points: 5 }
+    - { type: sprint,   quantite: 600, points: 6 }
+    - { type: nage,     quantite: 100, points: 6 }
+    - { type: degats,   quantite: 40,  points: 6 }
+    - { type: tuer,     quantite: 15,  points: 6 }
+    - { type: tuer,     cible: zombie,   quantite: 8, points: 6 }
+    - { type: tuer,     cible: skeleton, quantite: 6, points: 6 }
+    - { type: tuer,     cible: creeper,  quantite: 3, points: 7 }
+    - { type: tuer,     cible: spider,   quantite: 5, points: 6 }
+    - { type: minerais, quantite: 30, points: 6 }
+    - { type: minerais, cible: moyen, quantite: 10, points: 7 }
+    - { type: minerais, cible: rare,  quantite: 2,  points: 8 }
+    - { type: viande,   quantite: 5,  points: 4 }
+    - { type: shaker,   quantite: 1,  points: 3 }
+    - { type: peche,    quantite: 5,  points: 6 }
+    - { type: recolte,  quantite: 32, points: 5 }
+    - { type: buches,   quantite: 32, points: 5 }
+    - { type: points,   quantite: 40, points: 5 }
+  # Un défi commun par jour : tout le monde y contribue, chaque participant gagne les points
+  duo:
+    - { type: sprint,   quantite: 2000, points: 10 }
+    - { type: tuer,     quantite: 40,   points: 10 }
+    - { type: minerais, quantite: 80,   points: 10 }
+    - { type: points,   quantite: 150,  points: 10 }
+    - { type: recolte,  quantite: 100,  points: 10 }
+    - { type: buches,   quantite: 100,  points: 10 }
+    - { type: peche,    quantite: 15,   points: 10 }
+
+# Niveau affiché devant le pseudo : "★5 Locktix"
+affichage:
+  etoile-tab: true    # dans la liste des joueurs (touche Tab)
+  etoile-chat: true   # dans le chat (et les messages de mort)
+  etoile-tete: true   # au-dessus de la tête
+  gains: bossbar      # où afficher les points gagnés : bossbar (barre en haut, 5 s) ou actionbar (au-dessus de la hotbar)
+  feu-artifice: true  # feu d'artifice (inoffensif) aux couleurs du palier à chaque niveau
+
+# ─────────────────────────────────────────────
+#  HUD en images (anneaux autour de la hotbar)
+#  Le plugin fabrique un petit resource pack et le sert lui-même sur le port ci-dessous.
+#  Chaque joueur le reçoit à la connexion ; s'il le refuse, il garde le tableau sur le côté.
+#  Pour un joueur qui n'est pas sur ta machine : ce port doit être joignable (comme celui du serveur),
+#  ou mets dans "adresse" une URL qui mène au pack (ex. http://mon-ip-publique:25566).
+#  Après un changement de port : redémarre le serveur.
+# ─────────────────────────────────────────────
+hud:
+  actif: true
+  port: 25566
+  adresse: ""         # vide = la même adresse que celle utilisée pour se connecter au serveur

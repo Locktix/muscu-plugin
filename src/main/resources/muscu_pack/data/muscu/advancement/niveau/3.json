@@ -1,0 +1,22 @@
+{
+  "parent": "muscu:niveau/2",
+  "criteria": {
+    "niveau": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "icon": {
+      "id": "minecraft:iron_sword"
+    },
+    "title": {
+      "text": "Niv 3 : Coup de poing"
+    },
+    "description": {
+      "text": "Atteindre le niveau 3 de muscu\n+0,5 dégât d'attaque"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false
+  }
+}

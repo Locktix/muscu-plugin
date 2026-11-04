@@ -1,0 +1,12 @@
+name: Muscu
+version: '${version}'
+main: fr.muscu.MuscuPlugin
+bootstrapper: fr.muscu.MuscuBootstrap
+api-version: '26.3'
+description: Deviens un peu plus fort en jouant (version chill)
+authors: [alanp]
+
+permissions:
+  muscu.admin:
+    description: Commandes /muscu admin (niveaux, points, reload...)
+    default: op

@@ -1,0 +1,22 @@
+{
+  "parent": "muscu:root",
+  "criteria": {
+    "niveau": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "icon": {
+      "id": "minecraft:iron_pickaxe"
+    },
+    "title": {
+      "text": "Niv 1 : Premier échauffement"
+    },
+    "description": {
+      "text": "Atteindre le niveau 1 de muscu\n+5% vitesse de minage"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false
+  }
+}

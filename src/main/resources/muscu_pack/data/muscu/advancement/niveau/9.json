@@ -1,0 +1,22 @@
+{
+  "parent": "muscu:niveau/8",
+  "criteria": {
+    "niveau": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "icon": {
+      "id": "minecraft:rabbit_foot"
+    },
+    "title": {
+      "text": "Niv 9 : Sprinteur"
+    },
+    "description": {
+      "text": "Atteindre le niveau 9 de muscu\nVitesse à +6%"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false
+  }
+}

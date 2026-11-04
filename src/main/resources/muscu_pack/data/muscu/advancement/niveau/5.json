@@ -1,0 +1,22 @@
+{
+  "parent": "muscu:niveau/4",
+  "criteria": {
+    "niveau": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "icon": {
+      "id": "minecraft:diamond_pickaxe"
+    },
+    "title": {
+      "text": "Niv 5 : Bras de mineur"
+    },
+    "description": {
+      "text": "Atteindre le niveau 5 de muscu\nMinage à +10%"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false
+  }
+}

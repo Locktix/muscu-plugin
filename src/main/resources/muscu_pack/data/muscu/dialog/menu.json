@@ -1,0 +1,129 @@
+{
+  "type": "minecraft:multi_action",
+  "pause": false,
+  "after_action": "close",
+  "title": {
+    "text": "✦ MUSCU ✦",
+    "color": "gold",
+    "bold": true
+  },
+  "external_title": {
+    "text": "✦ Muscu",
+    "color": "gold"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "width": 250,
+    "contents": {
+      "text": "Ta fiche, tes défis du jour et comment gagner des points.",
+      "color": "gray"
+    }
+  },
+  "actions": [
+    {
+      "label": [
+        "",
+        {
+          "text": "★ ",
+          "color": "gold"
+        },
+        {
+          "text": "Ma fiche"
+        }
+      ],
+      "tooltip": {
+        "text": "Ton niveau, ta progression et tes bonus"
+      },
+      "width": 200,
+      "action": {
+        "type": "run_command",
+        "command": "/muscu"
+      }
+    },
+    {
+      "label": [
+        "",
+        {
+          "text": "☀ ",
+          "color": "gold"
+        },
+        {
+          "text": "Défis du jour"
+        }
+      ],
+      "tooltip": {
+        "text": "Tes défis du jour et le défi duo"
+      },
+      "width": 200,
+      "action": {
+        "type": "run_command",
+        "command": "/muscu defis"
+      }
+    },
+    {
+      "label": [
+        "",
+        {
+          "text": "⚡ ",
+          "color": "green"
+        },
+        {
+          "text": "Gagner des points"
+        }
+      ],
+      "tooltip": {
+        "text": "Toutes les façons de gagner des points de muscu"
+      },
+      "width": 200,
+      "action": {
+        "type": "run_command",
+        "command": "/muscu gagner"
+      }
+    },
+    {
+      "label": [
+        "",
+        {
+          "text": "✎ ",
+          "color": "gold"
+        },
+        {
+          "text": "Mes stats"
+        }
+      ],
+      "tooltip": {
+        "text": "Tout ce que tu as fait depuis le début"
+      },
+      "width": 200,
+      "action": {
+        "type": "run_command",
+        "command": "/muscu stats"
+      }
+    },
+    {
+      "label": [
+        "",
+        {
+          "text": "✦ ",
+          "color": "aqua"
+        },
+        {
+          "text": "Changer le tableau"
+        }
+      ],
+      "tooltip": {
+        "text": "Sur le côté de l'écran : perso → classement → masqué"
+      },
+      "width": 200,
+      "action": {
+        "type": "run_command",
+        "command": "/muscu tableau"
+      }
+    }
+  ],
+  "columns": 1,
+  "exit_action": {
+    "label": "Fermer",
+    "width": 200
+  }
+}

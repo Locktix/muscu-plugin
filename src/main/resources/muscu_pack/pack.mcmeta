@@ -1,0 +1,7 @@
+{
+  "pack": {
+    "description": "Muscu (fourni par le plugin) : succès et bouton du menu",
+    "min_format": 88,
+    "max_format": 999
+  }
+}

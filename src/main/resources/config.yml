@@ -100,7 +100,7 @@ affichage:
   etoile-tab: true    # dans la liste des joueurs (touche Tab)
   etoile-chat: true   # dans le chat (et les messages de mort)
   etoile-tete: true   # au-dessus de la tête
-  gains: bossbar      # où afficher les points gagnés : bossbar (barre en haut, 5 s) ou actionbar (au-dessus de la hotbar)
+  gains: actionbar    # où afficher les points gagnés (joueurs sans le HUD) : actionbar (au-dessus de la hotbar) ou bossbar (barre en haut, 5 s). La barre du haut sert aux métiers de SurviePlus.
   feu-artifice: true  # feu d'artifice (inoffensif) aux couleurs du palier à chaque niveau
 
 # ─────────────────────────────────────────────

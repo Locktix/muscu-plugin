@@ -115,7 +115,7 @@ public final class Reglages {
         etoileTab = c.getBoolean("affichage.etoile-tab", true);
         etoileChat = c.getBoolean("affichage.etoile-chat", true);
         etoileTete = c.getBoolean("affichage.etoile-tete", true);
-        gainsBossBar = !"actionbar".equalsIgnoreCase(c.getString("affichage.gains", "bossbar"));
+        gainsBossBar = !"actionbar".equalsIgnoreCase(c.getString("affichage.gains", "actionbar"));
         feuArtifice = c.getBoolean("affichage.feu-artifice", true);
 
         hudActif = c.getBoolean("hud.actif", true);

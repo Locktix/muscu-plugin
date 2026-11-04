@@ -11,6 +11,9 @@ gradlew.bat build
 
 Le plugin sort dans `build/libs/Muscu-1.4.0.jar` (il faut Java 25).
 
+`build` lance aussi les tests (JUnit + MockBukkit, dans `src/test/java`) : si un test échoue, pas de jar.
+Pour les lancer seuls : `gradlew.bat test`.
+
 ## Installer / passer du datapack au plugin
 
 1. Arrête le serveur et mets `Muscu-1.4.0.jar` dans `plugins/` (en enlevant l'ancienne version).

@@ -157,6 +157,11 @@ public final class Reglages {
         }
     }
 
+    /** Réglages lus depuis une configuration déjà chargée (utilisé par les tests). */
+    static Reglages depuis(FileConfiguration c, Logger log) {
+        return new Reglages(c, log);
+    }
+
     public static Reglages charger(JavaPlugin plugin) {
         plugin.saveDefaultConfig();
         plugin.reloadConfig();

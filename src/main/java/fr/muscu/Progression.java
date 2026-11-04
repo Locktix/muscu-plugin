@@ -215,14 +215,7 @@ public final class Progression {
 
     /** @return true si le joueur a monté d'au moins un niveau */
     private boolean verifierNiveau(Player joueur, Profil p) {
-        Reglages r = plugin.reglages();
-        boolean monte = false;
-        while (p.niveau < Paliers.MAX && p.pts >= r.besoin(p.niveau)) {
-            p.pts -= r.besoin(p.niveau);
-            p.niveau++;
-            monte = true;
-        }
-        if (!monte) return false;
+        if (!monter(p, plugin.reglages())) return false;
 
         Bonus.appliquer(joueur, p.niveau);
         majNom(joueur, p.niveau);
@@ -247,6 +240,21 @@ public final class Progression {
             if (autre != joueur) autre.playSound(autre.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 0.6f, 1.4f);
         }
         return true;
+    }
+
+    /**
+     * Fait monter le profil tant qu'il a assez de points (plusieurs niveaux d'un coup si besoin).
+     * Au niveau max, les points en trop sont gardés.
+     * @return true si le profil a monté d'au moins un niveau
+     */
+    static boolean monter(Profil p, Reglages r) {
+        boolean monte = false;
+        while (p.niveau < Paliers.MAX && p.pts >= r.besoin(p.niveau)) {
+            p.pts -= r.besoin(p.niveau);
+            p.niveau++;
+            monte = true;
+        }
+        return monte;
     }
 
     /** Feu d'artifice aux couleurs du palier, qui explose tout de suite et ne blesse personne. */

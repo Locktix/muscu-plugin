@@ -96,6 +96,19 @@ Si tu utilises un jour `/scoreboard` ou `/team` vanilla, mets `etoile-tete: fals
 Tout est dans `plugins/Muscu/config.yml` : points par activité, minerais, points par niveau, duo, shaker.
 Les bonus de chaque niveau sont dans `src/main/java/fr/muscu/Bonus.java`.
 
+## Pack du HUD
+
+Le serveur fabrique le pack du HUD (`plugins/Muscu/muscu-hud.zip`) à partir de `config.yml`. Quand le port du
+HUD n'est pas joignable (hébergeur qui n'ouvre que le port Minecraft), le pack est mis en ligne dans la Release
+`packs` de ce dépôt :
+
+```powershell
+powershell -ExecutionPolicy Bypass -File publier-pack.ps1   # prend le zip du serveur de test (..\minecraft-server)
+```
+
+puis dans `config.yml` : `hud.adresse: "https://github.com/Locktix/muscu-plugin/releases/download/packs"`.
+À refaire quand l'empreinte du pack change (nouvelle version, défis modifiés).
+
 ## Où sont les données
 
 - Progression : dans les données de chaque joueur (`playerdata`), rien à sauvegarder à part.
